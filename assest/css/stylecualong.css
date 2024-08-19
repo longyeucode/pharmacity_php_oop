@@ -1,0 +1,596 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1B6FBC;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* ------------------------------header top---------------------------------------- */
+.container_footer{
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 0.938em;
+}
+.header {
+  background-color: #1B6FBC;
+  padding: 0px 100px;
+  width: 100%;
+  height: 160px;
+}
+
+.header__top {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__hotline {
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  max-height: 32px;
+  padding: 5px 10px;
+  color: var(--primary-color);
+  background-color: white;
+  line-height: 56px;
+  border-radius: 15px;
+}
+
+.header__social-network {
+  margin: 0px 10px;
+}
+
+.header__social-network > .bx {
+  line-height: 56px;
+  color: white;
+  font-size: 24px;
+}
+
+.header__social-network > .bx:hover {
+  opacity: 80%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.header__login {
+  display: flex;
+  font-size: 14px;
+  color: white;
+}
+
+.header__login a:hover {
+  opacity: 80%;
+  transition: 0.5s;
+}
+
+.header__sign-up {
+  position: relative;
+}
+
+.header__sign-up > a::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 1px;
+  background-color: rgb(255, 255, 255);
+  bottom: 18px;
+  left: 100%;
+}
+
+.header__login a {
+  line-height: 56px;
+  padding: 0px 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* ------------------------------ header mid ------------------------------ */
+.header__mid {
+  display: flex;
+  height: 100px;
+}
+
+/* ------------------------------ header nav mid --------------------------- */
+.header__nav-mid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header__logo {
+  width: 25%;
+}
+
+.header__logo img{
+  height: 100%;
+}
+
+.header__nav {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__search {
+  width: 100%;
+}
+
+.header__cart {
+  width: 25%;
+  text-align: center;
+}
+
+.header__search input {
+  padding: 10px 20px;
+  width: 100%;
+  outline: none;
+  border-radius: 30px;
+}
+
+.header__input {
+  position: relative;
+}
+
+.header__search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  padding: 5px 5px;
+  right: 10px;
+}
+
+.header__search-icon .bx {
+  color: white;
+  font-size: 18px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.header__cart .bx{
+  color: white;
+  font-size: 30px;
+}
+
+.header__cart span {
+  background-color: white;
+  padding: 5px 8px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.header__cart a {
+  text-decoration: none;
+}
+
+/* ----------------------------------- header nav  bot ------------------------------- */
+.header__menu ul {
+  height: 70px;
+  transform: translateX(20%);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.header__menu ul > li {
+  list-style: none;
+  padding: 0px 13px;
+  position: relative; 
+}
+
+.header__menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.header__menu ul > li::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: rgb(255, 255, 255);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease; 
+}
+
+.header__logo-mobile img{
+  height: 130px;
+  transform: translateX(50%);
+}
+
+.header__menu ul > li:hover::after {
+  width: 100%;
+}
+
+/* ---------------- nút check box ------------------ */
+#header__menu-mobile--input {
+  display: none;
+}
+
+.header__menu-res-icon {
+  display: none;
+}
+
+.header__menu-res-icon .bx{
+  transform: translateY(50%);
+  color: white;
+  font-size: 36px;
+}
+
+.header__menu-res-icon ~ .header__menu-overlay {
+  z-index: 1    ;
+  display: none;
+}
+
+.header__menu-res-input:checked ~ .header__menu-overlay {
+  display: block;
+}
+
+.header__menu-mobile {
+  z-index: 3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.header__menu-res-input:checked ~ .header__menu-mobile {
+  transform: translateX(0);
+}
+
+/* --------------- lớp phủ màu đen khi nhấn vòa dấu 3 gạch hiện ra menu ------------- */
+.header__menu-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------- list danh sách nav khi kéo thu nhỏ về ----------------  */
+.header__menu-mobile {
+  width: 320px;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  background-color: white;
+}
+
+.header__menu-mobile ul li {
+  list-style: none;
+  font-weight: 600;
+}
+
+.header__menu-mobile--list {
+  margin-top: 24px;
+  margin: 0px 20px;
+}
+
+.header__menu-mobile--list li {
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.header__menu-mobile-link {
+  text-decoration: none;
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 8px 0px;
+}
+
+.header__menu-moble-close {
+  font-size: 30px;
+  color: #666;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+
+.container{ 
+  max-width: 1290px;
+    margin: 20px auto;
+    padding: 0 0.938em;
+}
+
+
+.container-bodytin {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /*menu tin tức/////////////////////////////////*/
+ 
+.container h2{
+  font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  margin-bottom: 10px;
+}
+ 
+  
+  .tinphucon{
+    overflow: hidden;
+    width: 330px;
+    height: auto;
+  }
+
+.tincon_phu {
+  
+  margin-bottom: 10px;
+  margin-left: 10px;
+  overflow: hidden;
+  display: flex;
+ width: 100%;
+  height: auto;/* Hoặc bạn có thể đặt chiều cao tùy thuộc vào nội dung hoặc kích thước ảnh */
+}
+.tincon_phu img {
+  object-fit: cover;
+width: 100%; /* Đặt chiều rộng mong muốn */
+  height: 147px;/* Hoặc bạn có thể đặt chiều cao tùy thuộc vào nội dung hoặc kích thước ảnh */
+}
+
+.tintuc_new{
+  width: 100%; /* Đặt chiều rộng của phần tin tức */
+    margin: 0 auto; /* Để căn giữa theo chiều ngang */
+   
+display: flex;
+}
+.tintuc_new .titletin{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  }
+ .tincon a {
+  text-decoration: none;
+  color: white;
+}
+.danhmuc_tintuc a{
+  text-decoration: none;
+  color: black;
+}
+  .tincon {
+    position: relative; /* Đặt tincon thành vị trí tương đối */
+     width: 100%;
+      height: 460px; /* Đặt kích thước cho tincon */
+    overflow: hidden; /* Ngăn chặn nội dung bên trong vượt quá kích thước */
+  }
+
+  .image-container {
+    width: 100%;
+    height: 460px; 
+    position: relative;
+    display: inline-block;
+  }
+  
+  .nd_tin {
+    position: absolute; /* Đặt nd_tin thành vị trí tuyệt đối */
+    bottom: 0; /* Đặt ở dưới cùng của tincon */  
+    width:100%; /* Chiều rộng tương đương với tincon */
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền cho nd_tin */
+    color: #fff; /* Màu chữ cho nd_tin */
+    padding: 10px; /* Padding cho nd_tin */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+  }
+  
+
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .tincon p {
+    overflow: hidden;
+    text-overflow: ellipsis; /* Hiển thị ... khi nội dung quá dài */
+    white-space: nowrap;
+    margin-top: 10px; /* Khoảng cách từ ảnh đến phần nội dung tin tức */
+  }
+  .tintuc h2 {
+    margin-top: 18px;
+    padding-bottom: 6px;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+
+
+.date{
+  padding-left: 10px;
+    display: flex;
+}
+.date p{
+    margin: 0 3px 0 0;
+    font-size: 13px;
+}
+.datedang{
+    color: #1c95e6;
+}
+.titletin{
+  padding-left: 10px;
+    font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+.tincon i{padding: 10px;
+    font-size: 30px;
+    color: #0072bc;
+}
+.plus{
+    align-items: center;
+    display: flex;
+}
+.plus p{
+
+    margin: 0;
+}
+
+
+.danhmuc_tintuc_con{
+  position: relative;
+  overflow: hidden;
+  background-color: #fff; 
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+
+
+
+.danhmuc_tintuc_con img {
+  width: 100%;
+  height:144px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+.ct_tintuc_con {
+  padding: 10px;
+}
+.ct_tintuc_con h4{
+  display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.ct_tintuc_con p{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ct_tintuc_con .date{
+  padding-left: 0px;
+}
+
+
+
+
+
+  /*footer/////////////////////////////////////////*/
+  .footer1 {
+    background-color: #0056b3;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+
+    padding: 20px;
+    width: 100%;
+}
+
+.footer-column img {
+    position: relative;
+    top: -8px
+}
+
+.footer-column {
+
+    flex: 1;
+    margin-right: 20px;
+
+}
+
+.chinhsach {
+    position: relative;
+
+}
+
+.footer-column:last-child {
+    margin-right: 0;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul,
+.footer-column p {
+
+color: #ffffff;
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-column ul li {
+  color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+
+    color: #0072bc;
+}
+
+.visit1 {
+    margin-bottom: 25px;
+    display: flex;
+
+
+}
+
+.visit1 .sđt {
+    color: #005CC9;
+}
+
+.visit {
+    padding: 10px;
+    width: 85px;
+    height: 300px;
+}
+
+.visit img {
+    width: 100%;
+    margin-right: 10px;
+    top: -20px;
+}
+
+.titlefooter {
+    position: relative;
+    top: -10px;
+}
+
+.titlefooter h3 {
+    margin: 0 auto;
+}
+
+.footerlogo-mobile {
+    display: none;
+}
